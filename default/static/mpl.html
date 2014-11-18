@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+    <title>GCLSender</title>
+    <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
+    <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/mediaplayer/1.0.0/media_player.js"></script>
+    <script type="text/javascript" src="mpl.js"></script>
+
+    <style>
+        body {
+            overflow:hidden;
+            height: 100%;
+        }
+        video {
+            height:auto;
+            width:100%;
+            text-align: center;
+            border:0px solid silver;
+            display: block;
+            vertical-align: middle;
+            color: #FFFFFF;
+            background-color: #000000;
+            font-weight: bold;
+            font-family: Verdana, Geneva, sans-serif;
+            font-size:40px;
+            float:left;
+            z-index: 1;
+            position:absolute;
+        }
+        *.overlay {
+          z-index: 90;
+          height: 100%;
+          width: 100%;
+          position: absolute;
+        }
+        #overlay-logo {
+          background-color: #000000;
+          background-image: url("logo4.jpg");
+          background-repeat:no-repeat;
+          background-position: center center;
+        }
+        #overlay-spinner {
+          display: none;
+        }
+        #spinner-container {
+          z-index: 91;
+          position: relative;
+          height: 100%;
+          width: 100%;
+        }
+        #spinner {
+          z-index: 999;
+          height: 22px;
+          width: 100%;
+          position: absolute;
+          bottom:150px;
+          display: block;
+          background-image: url("spinner.gif");
+          background-repeat:no-repeat;
+          background-position: center center;
+        }
+        #overlay-info {
+          display: none;
+        }
+        #info {
+          position: absolute;
+          bottom: 190px;
+          width: 100%;
+          text-align: center;
+          color: black;
+          background-color: lightgray;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="overlay" id="overlay-logo"></div>
+
+    <div class="overlay" id="overlay-spinner">
+      <div id="spinner-container">
+          <div id="spinner"></div>
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay-info">
+      <span id="info">Everything is fine.</span>
+    </div>
+
+    <video id="receiverVideoElement" style="height:95%; width:100%;"></video>
+
+</body>
+</html>
