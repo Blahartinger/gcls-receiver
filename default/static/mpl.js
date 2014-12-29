@@ -82,6 +82,7 @@ onload = function() {
     });
     mediaElement.addEventListener('loadeddata', function(e) {
         console.log('######### MEDIA ELEMENT DATA LOADED');
+        document.getElementById('overlay-info').style.display = "none";
     });
     mediaElement.addEventListener('canplay', function(e) {
         document.getElementById('overlay-logo').style.display = "none";
@@ -127,6 +128,8 @@ onload = function() {
         if (mediaPlayer !== null) {
             mediaPlayer.unload();
         }
+
+        document.getElementById('info').innerHTML = "";
 
         if (event.data['media'] && event.data['media']['contentId']) {
             var url = event.data['media']['contentId'];
