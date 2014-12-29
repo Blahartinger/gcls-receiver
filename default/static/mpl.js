@@ -163,7 +163,9 @@ onload = function() {
             mediaHost.onError = function(errorCode, requestStatus) {
                 console.error('### HOST ERROR - Fatal Error: code = ' + errorCode);
 
+				document.getElementById('overlay-spinner').style.display = "none";
                 document.getElementById('overlay-info').style.display = "block";
+                
                 if (errorCode in errorDescriptions) {
                     console.error('### HOST ERROR - Fatal Error: description = ' + errorDescriptions[errorCode]);
                     document.getElementById('info').innerHTML = 'Fatal Error: ' + errorDescriptions[errorCode];
