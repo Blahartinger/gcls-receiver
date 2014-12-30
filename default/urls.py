@@ -5,7 +5,7 @@ admin.autodiscover()
 
 
 urlpatterns = patterns('',
-	url(r'^cors/(?P<requestedurl>.+)$', default.views.corsproxy)
+	url(r'^cors/(?P<requestedurl>.+)$', views.corsproxy)
     # Examples:
     # url(r'^$', 'gettingstarted.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
