@@ -6,8 +6,10 @@ import requests, requests.utils
 # Create your views here.
 def corsproxy(request, requestedurl):
 
+    print(requestedurl)
     proxy_response = requests.get(requestedurl)
 
+    print("Status " + proxy_response.status)
     response = HttpResponse(proxy_response.body, content_type=proxy_response.headers['content-type'])
     response.status_code = status_code
     response["Access-Control-Allow-Origin"] = "https://gcls.herokuapp.com"
