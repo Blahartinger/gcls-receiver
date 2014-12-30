@@ -3,9 +3,9 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
-#import hello.views
 
 urlpatterns = patterns('',
+	url(r'^cors/(?P<requestedurl>.+)$', default.views.corsproxy)
     # Examples:
     # url(r'^$', 'gettingstarted.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
