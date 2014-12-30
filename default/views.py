@@ -6,7 +6,7 @@ import requests, requests.utils
 # Create your views here.
 def corsproxy(request, requestedurl):
 
-	proxy_response = requests.get(requestedurl)
+    proxy_response = requests.get(requestedurl)
 
     response = HttpResponse(proxy_response.body, content_type=proxy_response.headers['content-type'])
     response.status_code = status_code
